@@ -1,0 +1,31 @@
+---
+import Header from '../components/Header.astro';
+import '../styles/global.css';
+import '@fontsource/inter';
+import '@fontsource/cascadia-code';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "A personal blog" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="min-h-screen bg-background font-sans antialiased">
+		<Header />
+		<main class="container py-6">
+			<slot />
+		</main>
+	</body>
+</html>
