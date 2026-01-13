@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		/* Background: #1e1e1e -> 0 0% 11.8% */
+		--background: 0 0% 11.8%;
+		/* Foreground: #F6F5F4 -> 30 7.1% 96.1% */
+		--foreground: 30 7.1% 96.1%;
+
+		/* Card matches background for now */
+		--card: 0 0% 11.8%;
+		--card-foreground: 30 7.1% 96.1%;
+
+		--popover: 0 0% 14.1%;
+		--popover-foreground: 30 7.1% 96.1%;
+
+		/* Primary: #3584E4 -> 213 76.5% 55.1% */
+		--primary: 213 76.5% 55.1%;
+		--primary-foreground: 30 7.1% 96.1%;
+
+		/* Secondary: #3584E4 (Same as primary per request, or lighter?)
+		   Let's use a variation or same. Using same for now as requested. */
+		--secondary: 213 76.5% 55.1%;
+		--secondary-foreground: 30 7.1% 96.1%;
+
+		/* Accent: #00FFFF -> 180 100% 50% */
+		--accent: 180 100% 50%;
+		--accent-foreground: 0 0% 14.1%; /* Dark text on bright cyan */
+
+		--muted: 0 0% 20%; /* Slightly lighter than bg */
+		--muted-foreground: 0 0% 63.9%;
+
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 210 40% 98%;
+
+		--border: 0 0% 20%;
+		--input: 0 0% 20%;
+		--ring: 213 76.5% 55.1%;
+
+		--radius: 0.5rem;
+	}
+
+	.dark {
+		/* Duplicate root since this IS a dark theme by default now */
+		--background: 0 0% 11.8%;
+		--foreground: 30 7.1% 96.1%;
+		--card: 0 0% 11.8%;
+		--card-foreground: 30 7.1% 96.1%;
+		--popover: 0 0% 14.1%;
+		--popover-foreground: 30 7.1% 96.1%;
+		--primary: 213 76.5% 55.1%;
+		--primary-foreground: 30 7.1% 96.1%;
+		--secondary: 213 76.5% 55.1%;
+		--secondary-foreground: 30 7.1% 96.1%;
+		--muted: 0 0% 20%;
+		--muted-foreground: 0 0% 63.9%;
+		--accent: 180 100% 50%;
+		--accent-foreground: 0 0% 14.1%;
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 210 40% 98%;
+		--border: 0 0% 20%;
+		--input: 0 0% 20%;
+		--ring: 213 76.5% 55.1%;
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
+}
