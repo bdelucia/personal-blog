@@ -1,0 +1,52 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import * as Card from '$lib/components/ui/card';
+import { Button } from '$lib/components/ui/button';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<Layout title="Blog">
+	<div class="space-y-6">
+		<div class="flex flex-col gap-2">
+			<h1 class="text-3xl font-bold tracking-tight">Blog</h1>
+			<p class="text-muted-foreground">
+				Thoughts, tutorials, and insights.
+			</p>
+		</div>
+		
+		<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+			{posts.map((post) => (
+				<Card.Root class="flex flex-col justify-between">
+					<Card.Header>
+						<Card.Title class="line-clamp-2">
+							<a href={`/blog/${post.slug}/`} class="hover:underline">
+								{post.data.title}
+							</a>
+						</Card.Title>
+						<Card.Description>
+							{post.data.pubDate.toLocaleDateString('en-us', {
+								year: 'numeric',
+								month: 'short',
+								day: 'numeric',
+							})}
+						</Card.Description>
+					</Card.Header>
+					<Card.Content>
+						<p class="line-clamp-3 text-sm text-muted-foreground">
+							{post.data.description}
+						</p>
+					</Card.Content>
+					<Card.Footer>
+						<Button href={`/blog/${post.slug}/`} variant="secondary" class="w-full">
+							Read Article
+						</Button>
+					</Card.Footer>
+				</Card.Root>
+			))}
+		</div>
+	</div>
+</Layout>

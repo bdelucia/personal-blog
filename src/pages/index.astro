@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Button } from '$lib/components/ui/button';
+import * as Card from '$lib/components/ui/card';
+---
+
+<Layout title="Home">
+	<section class="py-12">
+		<h1 class="text-4xl font-extrabold tracking-tight lg:text-5xl">Welcome to my blog</h1>
+		<p class="mt-4 text-xl text-muted-foreground">
+			This is a starter template using Astro, Svelte, and Tailwind CSS (shadcn-svelte ready).
+		</p>
+		
+		<div class="mt-6 flex gap-4">
+			<Button href="/blog">Read the Blog</Button>
+			<Button href="/about" variant="outline">About Me</Button>
+		</div>
+
+		<div class="mt-12 grid gap-6 md:grid-cols-2">
+			<Card.Root>
+				<Card.Header>
+					<Card.Title>Feature: MDX</Card.Title>
+					<Card.Description>Write your content in MDX</Card.Description>
+				</Card.Header>
+				<Card.Content>
+					<p>Astro's MDX integration allows you to use components inside your markdown.</p>
+				</Card.Content>
+			</Card.Root>
+
+			<Card.Root>
+				<Card.Header>
+					<Card.Title>Feature: Shadcn Svelte</Card.Title>
+					<Card.Description>Beautiful components</Card.Description>
+				</Card.Header>
+				<Card.Content>
+					<p>Use accessible and customizable components from Shadcn Svelte.</p>
+				</Card.Content>
+			</Card.Root>
+		</div>
+	</section>
+</Layout>

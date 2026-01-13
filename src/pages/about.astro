@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import * as Card from '$lib/components/ui/card';
+import { Separator } from '$lib/components/ui/separator';
+---
+
+<Layout title="About">
+	<div class="container max-w-3xl py-6">
+		<h1 class="text-3xl font-bold tracking-tight">About Me</h1>
+		<p class="text-muted-foreground mt-2">A little bit about who I am.</p>
+		
+		<Separator class="my-6" />
+
+		<Card.Root>
+			<Card.Header>
+				<Card.Title>Profile</Card.Title>
+			</Card.Header>
+			<Card.Content class="prose dark:prose-invert">
+				<p>
+					I am a developer building with Astro and Svelte. This site demonstrates static site generation with dynamic components.
+				</p>
+				<p>
+					I love building tools that help people build better software.
+				</p>
+			</Card.Content>
+		</Card.Root>
+	</div>
+</Layout>
