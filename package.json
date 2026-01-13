@@ -4,8 +4,10 @@
     "version": "0.0.1",
     "scripts": {
         "dev": "astro dev",
+        "start": "astro dev",
         "build": "astro build",
         "preview": "astro preview",
+        "deploy": "astro build && wrangler pages deploy dist",
         "astro": "astro"
     },
     "dependencies": {
@@ -29,6 +31,7 @@
         "tailwindcss-animate": "^1.0.7"
     },
     "devDependencies": {
-        "@lucide/svelte": "^0.482.0"
+        "@lucide/svelte": "^0.482.0",
+        "wrangler": "^4.58.0"
     }
 }
