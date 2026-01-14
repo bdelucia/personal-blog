@@ -4,62 +4,75 @@
 
 @layer base {
 	:root {
-		/* Background: #1e1e1e -> 0 0% 11.8% */
-		--background: 0 0% 11.8%;
-		/* Foreground: #F6F5F4 -> 30 7.1% 96.1% */
-		--foreground: 30 7.1% 96.1%;
+		/* Light Mode */
+		/* Background: #F6F5F4 (Off-white) */
+		--background: 30 7.1% 96.1%;
+		/* Foreground: #1e1e1e (Dark Grey) */
+		--foreground: 0 0% 11.8%;
 
-		/* Card matches background for now */
-		--card: 0 0% 11.8%;
-		--card-foreground: 30 7.1% 96.1%;
+		/* Card matches background */
+		--card: 30 7.1% 96.1%;
+		--card-foreground: 0 0% 11.8%;
 
-		--popover: 0 0% 14.1%;
-		--popover-foreground: 30 7.1% 96.1%;
+		--popover: 30 7.1% 96.1%;
+		--popover-foreground: 0 0% 11.8%;
 
-		/* Primary: #3584E4 -> 213 76.5% 55.1% */
+		/* Primary: #3584E4 */
 		--primary: 213 76.5% 55.1%;
 		--primary-foreground: 30 7.1% 96.1%;
 
-		/* Secondary: #3584E4 (Same as primary per request, or lighter?)
-		   Let's use a variation or same. Using same for now as requested. */
+		/* Secondary: #3584E4 */
 		--secondary: 213 76.5% 55.1%;
 		--secondary-foreground: 30 7.1% 96.1%;
 
-		/* Accent: #00FFFF -> 180 100% 50% */
+		/* Accent: #00FFFF */
 		--accent: 180 100% 50%;
-		--accent-foreground: 0 0% 14.1%; /* Dark text on bright cyan */
+		--accent-foreground: 0 0% 11.8%;
 
-		--muted: 0 0% 20%; /* Slightly lighter than bg */
-		--muted-foreground: 0 0% 63.9%;
+		--muted: 0 0% 90%;
+		--muted-foreground: 0 0% 40%;
 
-		--destructive: 0 62.8% 30.6%;
+		--destructive: 0 84.2% 60.2%;
 		--destructive-foreground: 210 40% 98%;
 
-		--border: 0 0% 20%;
-		--input: 0 0% 20%;
+		--border: 0 0% 85%;
+		--input: 0 0% 85%;
 		--ring: 213 76.5% 55.1%;
 
 		--radius: 0.5rem;
 	}
 
 	.dark {
-		/* Duplicate root since this IS a dark theme by default now */
+		/* Dark Mode */
+		/* Background: #1e1e1e */
 		--background: 0 0% 11.8%;
+		/* Foreground: #F6F5F4 */
 		--foreground: 30 7.1% 96.1%;
+
 		--card: 0 0% 11.8%;
 		--card-foreground: 30 7.1% 96.1%;
+
 		--popover: 0 0% 14.1%;
 		--popover-foreground: 30 7.1% 96.1%;
+
+		/* Primary: #3584E4 */
 		--primary: 213 76.5% 55.1%;
 		--primary-foreground: 30 7.1% 96.1%;
+
+		/* Secondary: #3584E4 */
 		--secondary: 213 76.5% 55.1%;
 		--secondary-foreground: 30 7.1% 96.1%;
-		--muted: 0 0% 20%;
-		--muted-foreground: 0 0% 63.9%;
+
+		/* Accent: #00FFFF */
 		--accent: 180 100% 50%;
 		--accent-foreground: 0 0% 14.1%;
+
+		--muted: 0 0% 20%;
+		--muted-foreground: 0 0% 63.9%;
+
 		--destructive: 0 62.8% 30.6%;
 		--destructive-foreground: 210 40% 98%;
+
 		--border: 0 0% 20%;
 		--input: 0 0% 20%;
 		--ring: 213 76.5% 55.1%;

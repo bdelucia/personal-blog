@@ -3,6 +3,7 @@ import Header from '../components/Header.astro';
 import '../styles/global.css';
 import '@fontsource/inter';
 import '@fontsource/cascadia-code';
+import { ModeWatcher } from "mode-watcher";
 
 interface Props {
 	title: string;
@@ -23,6 +24,7 @@ const { title, description = "A personal blog" } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="min-h-screen bg-background font-sans antialiased">
+		<ModeWatcher client:load />
 		<Header />
 		<main class="container py-6">
 			<slot />
