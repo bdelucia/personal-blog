@@ -61,7 +61,7 @@ const config = {
                 sm: "calc(var(--radius) - 4px)",
             },
             fontFamily: {
-                sans: ["Source Sans 3", ...fontFamily.sans],
+                sans: ["Open Sans", ...fontFamily.sans],
                 mono: ["Cascadia Code", ...fontFamily.mono],
                 serif: ["EB Garamond", ...fontFamily.serif],
             },
