@@ -17,7 +17,7 @@
         "@astrojs/tailwind": "^5.1.5",
         "@fontsource/cascadia-code": "^5.2.3",
         "@fontsource/eb-garamond": "^5.2.7",
-        "@fontsource/plus-jakarta-sans": "^5.2.8",
+        "@fontsource/source-sans-3": "^5.2.9",
         "@tailwindcss/typography": "^0.5.19",
         "astro": "^5.16.9",
         "bits-ui": "^2.15.4",
