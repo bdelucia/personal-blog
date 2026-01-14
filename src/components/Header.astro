@@ -1,5 +1,6 @@
 ---
 import { Button } from '$lib/components/ui/button';
+import ModeToggle from '$lib/components/ModeToggle.svelte';
 
 const links = [
 	{ href: '/', label: 'Home' },
@@ -10,21 +11,22 @@ const links = [
 const { pathname } = Astro.url;
 ---
 
-<header class="sticky top-0 z-50 w-full border-b bg-[#242424]/95 backdrop-blur supports-[backdrop-filter]:bg-[#242424]/60">
+<header class="sticky top-0 z-50 w-full border-b bg-background/95 dark:bg-[#242424]/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:supports-[backdrop-filter]:bg-[#242424]/60">
 	<div class="container flex h-14 items-center">
 		<a href="/" class="mr-6 flex items-center space-x-2">
-			<span class="hidden font-bold sm:inline-block">My Blog</span>
+			<span class="hidden font-bold sm:inline-block">bobbehh</span>
 		</a>
-		<nav class="flex items-center space-x-6 text-sm font-medium">
+		<nav class="ml-auto flex items-center space-x-6 text-sm font-medium">
 			{links.map(({ href, label }) => (
 				<Button 
 					href={href} 
 					variant={pathname === href || (href !== '/' && pathname.startsWith(href)) ? "secondary" : "ghost"}
-					class="text-foreground transition-colors"
+					class="transition-colors"
 				>
 					{label}
 				</Button>
 			))}
+			<ModeToggle client:load />
 		</nav>
 	</div>
 </header>
