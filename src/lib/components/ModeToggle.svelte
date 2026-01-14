@@ -6,7 +6,7 @@
   let { class: className = "" } = $props();
 </script>
 
-<Button variant="ghost" size="icon" onclick={toggleMode} class="relative {className}">
+<Button variant="ghost" size="icon" onclick={toggleMode} class="relative hover:!text-foreground {className}">
   <Sun
     class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all duration-300 dark:-rotate-90 dark:scale-0"
   />
