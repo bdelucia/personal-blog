@@ -57,7 +57,7 @@ const config = {
 				sm: "calc(var(--radius) - 4px)"
 			},
 			fontFamily: {
-				sans: ["Inter", ...fontFamily.sans],
+				sans: ["Plus Jakarta Sans", ...fontFamily.sans],
 				mono: ["Cascadia Code", ...fontFamily.mono],
 				serif: ["EB Garamond", ...fontFamily.serif]
 			}
