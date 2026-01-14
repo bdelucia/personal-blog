@@ -3,8 +3,6 @@ import { type CollectionEntry, getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { Separator } from '$lib/components/ui/separator';
 import { Badge } from '$lib/components/ui/badge';
-import { Button } from '$lib/components/ui/button';
-import { ChevronLeft } from 'lucide-svelte';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -21,11 +19,6 @@ const { Content } = await post.render();
 
 <Layout title={post.data.title} description={post.data.description}>
 	<div class="container max-w-3xl py-6">
-		<Button href="/blog" variant="ghost" class="pl-0 mb-6 hover:bg-transparent hover:text-primary">
-			<ChevronLeft class="mr-2 h-4 w-4" />
-			Back to Blog
-		</Button>
-		
 		<article class="prose prose-slate dark:prose-invert max-w-none">
 			<div class="mb-6 space-y-4 font-serif">
 				<h1 class="mb-2 text-4xl font-extrabold tracking-tight lg:text-5xl">{post.data.title}</h1>
