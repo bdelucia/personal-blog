@@ -58,7 +58,8 @@ const config = {
 			},
 			fontFamily: {
 				sans: ["Inter", ...fontFamily.sans],
-				mono: ["Cascadia Code", ...fontFamily.mono]
+				mono: ["Cascadia Code", ...fontFamily.mono],
+				serif: ["EB Garamond", ...fontFamily.serif]
 			}
 		}
 	},
