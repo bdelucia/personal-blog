@@ -23,7 +23,7 @@ const posts = (await getCollection('blog')).sort(
 				<Card.Root class="flex flex-col justify-between">
 					<Card.Header>
 						<Card.Title class="line-clamp-2">
-							<a href={`/blog/${post.slug}/`} class="hover:underline">
+							<a href={`/blog/${post.id}/`} class="hover:underline">
 								{post.data.title}
 							</a>
 						</Card.Title>
@@ -41,7 +41,7 @@ const posts = (await getCollection('blog')).sort(
 						</p>
 					</Card.Content>
 					<Card.Footer>
-						<Button href={`/blog/${post.slug}/`} variant="secondary" class="w-full">
+						<Button href={`/blog/${post.id}/`} variant="secondary" class="w-full">
 							Read Article
 						</Button>
 					</Card.Footer>

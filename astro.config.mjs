@@ -12,4 +12,11 @@ export default defineConfig({
     }),
     mdx(),
   ],
+  vite: {
+    server: {
+      watch: {
+        ignored: ['**/.obsidian/**'],
+      },
+    },
+  },
 });

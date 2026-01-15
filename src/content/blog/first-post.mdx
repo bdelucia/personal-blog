@@ -1,16 +1,16 @@
 ---
-title: "First Post"
-description: "Lorem ipsum dolor sit amet"
-pubDate: "Jan 14 2026"
-heroImage: "/src/assets/picture.jpg"
+title: "Astro review: better than Next.js?"
+description: My thoughts after going from a full-stack Next.js React blog to a static site built with Astro and Obsidian.
+pubDate: Jan 14 2026
+heroImage: /src/assets/picture.jpg
 ---
 
-# Hello World
+# What is Astro?
 
-This is my first post using **MDX**!
+Astro is a JavaScript web framework (yes another one). But, this one is _langugage agnostic_, which means you can use a variety of UI frameworks, to name them: React, Vue, Preact, Svelte and Solid. Pretty "solid" lineup of frameworks there. But there are other language agnostic web frameworks out there, so what sets Astro apart? The big one: Astro ships zero-JS code if you just use pure Astro components + Markdown/MDX files.
 
-I can use Svelte components here if I want.
+I learned about Astro in the middle of adding to my Next.Js blog, which was enamored with a Supabase Auth system + 3 database tables, GitHub Actions CI/CD pipeline pushing to AWS ECS, an admin dashboard with Google Analytics data + full content-management system. But in all its glory, I wasn't using the blog a whole lot. And it was costing me a ton in AWS: $50.40 ($31.40 of which came from ECS) the first month, $52.33 ($42.38 of which came from ECS) the next month, $13.15 the third and $8.81 (the last month before I stopped the service).
 
-```javascript
-console.log("Hello World");
-```
+![Next.js bundle size](/src/assets/nextjs-size.png)
+
+![Astro bundle size](/src/assets/astro-size.png)
