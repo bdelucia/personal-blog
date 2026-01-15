@@ -2,7 +2,7 @@
 title: "Astro review: better than Next.js?"
 description: My thoughts after going from a full-stack Next.js React blog to a static site built with Astro and Obsidian.
 pubDate: Jan 14 2026
-heroImage: /src/assets/picture.jpg
+heroImage: /images/picture.jpg
 ---
 # What is Astro?
 
@@ -19,20 +19,20 @@ I learned about Astro in the middle of adding to my Next.Js blog, aptly named: *
 ### Bundle size differences
 Let's "weigh" the difference between the 2 blog websites, starting with my old Next.js one:
 
-![Next.js bundle size](/src/assets/nextjs-size.png)
+![Next.js bundle size](/images/nextjs-size.png)
 
 ~*6.5MB* was the total size shipped. Which is apparently a lot for a blog website with one article according to ChatGPT. Who knows what is in the largest JavaScript bundle, Next.JS serializes/randomizes the bundle names so we have no clue as to who is the culprit of being the largest chunk of JS.  
 
 Now let's check out our Astro blog:
-![Astro bundle size](/src/assets/astro-size.png)
+![Astro bundle size](/images/astro-size.png)
 ~101 *KB* total size shipped. Which is a 98.45% decrease in size compared to *Bob with a Blog*! And look, we can actually see what is taking up the most size. Without the ModeToggle Svelte component, the app  would be about half the size. But what does that mean for real-world users?
 ### Load-time performance
 To be honest… the difference is noticeable. Check out the Next.js blog [here](https://www.bobwithablog.dev/) and the Astro blog [here](https://personal-blog-1lm2920nz-bdelucias-projects.vercel.app/blog/first-post/) (you are probably already on this one!) if you want to check out the difference in performance for yourself. 
 
 Here is the performance audit results from Google Chrome's Lighthouse audit on the *Bob with a Blog* website:  
-![](/src/assets/bobwithablog-audit.png)
+![](/images/bobwithablog-audit.png)
 Not bad... and here is the Astro audit results:
-![](/src/assets/astro-audit.png)
+![](/images/astro-audit.png)
 
 
 It's a lot better! Saving a second in Largest Contentful Paint speed and Speed Index doesn't seem like a lot, but it is definitely noticeable when you start clicking around both websites. 
@@ -189,11 +189,11 @@ Astro isn't all sunshine and rainbows though. While you won't wake up one day to
 
 ### Slow dev server
 The dev server was easy to pick out as a point of contention surrounding Astro. While the server will automatically refresh when changes are made (this is called Hot Module Replacement, or HMR), that refresh takes a while to do. Just while writing this first post and seeing the content change, it takes a while, anywhere from a minimum of 2 seconds to ~11 seconds:
-![](/src/assets/astro-dev-server.png)
+![](/images/astro-dev-server.png)
 The ~11 seconds came from me editing before the server could load the page completely, so it could be more or less depending on how fast you are editing. Still, this is one area where Next.js is better. Next.js has fine-grained HMR, which will swap out edited code at the module level, so it doesn't need to load the whole page each time like Astro does.
 
 It's also pretty slow loading routes, this is how long it took to go from each route in my blog: 
-![](/src/assets/astro-dev-server-routes.png)
+![](/images/astro-dev-server-routes.png)
 Just under 2.5 seconds to load each page. Next.js uses Turbopack as its' bundler, which is super quick, while Astro just uses Vite's... which gets the job done but noticeably slower compared to Turbopack. 
 
 This is probably my biggest sticking point with Astro... the dev server just is too slow. But this is a tradeoff when you go full Arch-mode with a web framework; it's slim, but you don't have certain tools that speed processes up like Turbopack does with Next.js.
