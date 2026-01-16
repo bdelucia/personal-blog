@@ -25,6 +25,18 @@ const { title, description = "A personal blog" } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<ClientRouter />
+		<script is:inline>
+			function applyTheme() {
+				const theme = localStorage.getItem('mode-watcher-mode');
+				if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+					document.documentElement.classList.add('dark');
+				} else {
+					document.documentElement.classList.remove('dark');
+				}
+			}
+			applyTheme();
+			document.addEventListener('astro:after-swap', applyTheme);
+		</script>
 	</head>
 	<body class="min-h-screen bg-background font-sans antialiased">
 		<ModeWatcher client:load transition:persist />
