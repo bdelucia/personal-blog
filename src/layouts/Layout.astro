@@ -5,6 +5,7 @@ import '@fontsource/open-sans';
 import '@fontsource/cascadia-code';
 import '@fontsource/eb-garamond';
 import { ModeWatcher } from "mode-watcher";
+import { ClientRouter } from 'astro:transitions';
 
 interface Props {
 	title: string;
@@ -23,10 +24,11 @@ const { title, description = "A personal blog" } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ClientRouter />
 	</head>
 	<body class="min-h-screen bg-background font-sans antialiased">
-		<ModeWatcher client:load />
-		<Header />
+		<ModeWatcher client:load transition:persist />
+		<Header transition:persist />
 		<main class="container py-6">
 			<slot />
 		</main>
